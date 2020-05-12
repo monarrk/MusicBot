@@ -1,0 +1,4 @@
+rule kotlinc
+ command = kotlinc $in
+
+build MusicKt.class: kotlinc src/chords.kt src/notes.kt src/main.kt
