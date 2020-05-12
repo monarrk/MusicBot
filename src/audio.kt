@@ -22,7 +22,9 @@ fun generate_tone(hz: Int, msecs: Int, volume: Int) {
 
 		i = i + 1
 	}
+
 	sdl.drain()
+	sdl.flush()
 	sdl.stop()
 	sdl.close()
 }

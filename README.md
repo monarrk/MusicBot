@@ -1,7 +1,7 @@
 # MusicBot
 A bot to generate random music
 
-# Building
+### Building
 This project depends on
 - Kotlin
 - JDK

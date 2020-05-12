@@ -6,13 +6,18 @@ fun gen_chords(): List<Chord> {
 	return lst.toList()
 }
 
+fun semitone_to_hz(t: Int): Int = (Math.exp(t * (Math.log(Math.pow(2.toDouble(), (1.toDouble() / 12))))) * 50).toInt()
+
 fun main() {
 	val chords = gen_chords()
 
 	for (c in chords) {
+		println(c.dump())
 		val notes = c.get_notes()
 		for (n in notes) {
-			generate_tone(440 * (notes[(0..notes.count() - 1).random()].get_base()), c.get_len() / 4, 500)
+			val st = (notes[(0..notes.count() - 1).random()].get_base())
+			println("st: $st, hz: ${semitone_to_hz(st)}")
+			generate_tone(semitone_to_hz(notes[(0..notes.count() - 1).random()].get_base()) / 10, c.get_len() / 4, 500)
 		}
 	}
 }
