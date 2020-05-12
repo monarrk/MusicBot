@@ -7,7 +7,10 @@ public class Chord(max: Int = 3) {
 
 	/// Actual notes in the chord
 	val notes: MutableList<Note>
-	
+
+	/// Length the chord is played
+	val len: Int
+
 	/// Optionally add a mod to chord
 	fun add_mod(mod: Mods) {
 		// 50% chance of applying mod
@@ -49,6 +52,7 @@ public class Chord(max: Int = 3) {
 	fun get_base(): Int = this.base
 	fun get_mods(): MutableSet<Mods> = this.mods
 	fun get_notes(): MutableList<Note> = this.notes
+	fun get_len(): Int = this.len
 
 	/// Dump information
 	fun dump(): String {
@@ -58,7 +62,7 @@ public class Chord(max: Int = 3) {
 			n.add(it.name())
 		}
 
-		return "base: ${this.get_base()}, mods: ${this.get_mods()}, notes: $n}"
+		return "base: ${this.get_base()}, mods: ${this.get_mods()}, notes: $n, len: ${this.get_len()}"
 	}
 
 	/// Generate a chord
@@ -66,6 +70,7 @@ public class Chord(max: Int = 3) {
 		// Give ourselves a range of octaves
 		base = (0..(max * 12)).random()
 		mods = mutableSetOf()
+		len = (100..1000).random()
 
 		// Generate mods
 		add_mod(Mods.MINOR)

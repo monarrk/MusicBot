@@ -1,6 +1,8 @@
 public class Note(i: Int, list: List<String> = listOf("A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#")) {
 	/// Starting at A0 and increasing a half step
 	val base: Int
+
+	/// List of note names
 	val notes: List<String>
 	
 	fun get_base(): Int = this.base
