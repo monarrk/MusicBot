@@ -15,9 +15,10 @@ fun main() {
 		println(c.dump())
 		val notes = c.get_notes()
 		for (n in notes) {
-			val st = (notes[(0..notes.count() - 1).random()].get_base())
-			println("st: $st, hz: ${semitone_to_hz(st)}")
-			generate_tone(semitone_to_hz(notes[(0..notes.count() - 1).random()].get_base()) / 10, c.get_len() / 4, 500)
+			val note = (notes[(0..notes.count() - 1).random()])
+			val st = note.get_base()
+			println("name: ${note.name()}, st: $st, hz: ${semitone_to_hz(st)}")
+			generate_tone(semitone_to_hz(st) / 10, c.get_len() / 4, 500)
 		}
 	}
 }

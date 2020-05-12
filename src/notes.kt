@@ -1,4 +1,4 @@
-public class Note(i: Int, list: List<String> = listOf("A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#")) {
+public class Note(i: Int, list: List<String> = listOf("D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D")) {
 	/// Starting at A0 and increasing a half step
 	val base: Int
 

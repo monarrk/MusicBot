@@ -7,4 +7,4 @@ This project depends on
 - JDK
 - Ninja (optional if you feel like compiling from scratch)
 
-This project can be built by running `ninja` or with the command `kotlinc src/*.kt -include-runtime -d MusicBot.jar` and then ran with `kotlin MusicBot.jar`
+This project can be built by running `ninja` or with the command `kotlinc src/*.kt -include-runtime -d MusicBot.jar` and then run with `kotlin MusicBot.jar`
