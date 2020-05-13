@@ -20,7 +20,7 @@ fun main() {
 		duration = duration + it.get_len()
 	}
 
-	println("[MusicBot] Starting new song with ${chords.count()} chords and a duration of ${ANSI_BLUE}${duration}${ANSI_RESET} msecs")
+	println("[Dorian] Starting new song with ${chords.count()} chords and a duration of ${ANSI_BLUE}${duration}${ANSI_RESET} msecs")
 
 	for (c in chords) {
 		println("${ANSI_GREEN}new ${c.get_notes()[0].name()} chord:$ANSI_RESET ${c.dump()}")

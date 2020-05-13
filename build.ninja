@@ -1,4 +1,4 @@
 rule jar
  command = kotlinc $in -include-runtime -d $out
 
-build MusicBot.jar: jar src/chords.kt src/notes.kt src/audio.kt src/color.kt src/main.kt
+build Dorian.jar: jar src/chords.kt src/notes.kt src/audio.kt src/color.kt src/main.kt
