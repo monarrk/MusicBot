@@ -1,4 +1,4 @@
-public class Chord(max: Int = 6) {
+public class Chord(max: Int = 6, min: Int = 3) {
 	/// Base number starting at A0 and going up one half step (1, would be A#0, 7 Eb0, etc)
 	val base: Int
 
@@ -68,7 +68,7 @@ public class Chord(max: Int = 6) {
 	/// Generate a chord
 	init {
 		// Give ourselves a range of octaves
-		base = (3..(max * 12)).random()
+		base = (min..(max * 12)).random()
 		mods = mutableSetOf()
 		len = (100..1000).random()
 

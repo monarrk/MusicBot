@@ -1,4 +1,4 @@
-public class Note(i: Int, list: List<String> = listOf("D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D")) {
+public class Note(i: Int, list: List<String> = listOf("A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A")) {
 	/// Starting at A0 and increasing a half step
 	val base: Int
 
@@ -8,7 +8,7 @@ public class Note(i: Int, list: List<String> = listOf("D#", "E", "F", "F#", "G",
 	fun get_base(): Int = this.base
 
 	/// Get the name of the note
-	fun name(): String = notes[this.base % 12]
+	fun name(): String = notes[(this.notes.count() - 1) - (this.base % 12)]
 
 	init {
 		this.base = i
