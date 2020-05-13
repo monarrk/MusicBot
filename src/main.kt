@@ -26,10 +26,15 @@ fun main() {
 		println("${ANSI_GREEN}new ${c.get_notes()[0].name()} chord:$ANSI_RESET ${c.dump()}")
 		val notes = c.get_notes()
 		for (n in notes) {
-			val note = (notes[(0..notes.count() - 1).random()])
-			val st = note.get_base()
-			println("  :: note: ${note.name()}, st: $st, hz: ${semitone_to_hz(st)}, len: ${note.get_len()}")
-			generate_tone(semitone_to_hz(st), note.get_len(), 500)
+			if (n.is_rest()) {
+				println("  :: rest: len: ${n.get_len()}")
+				Thread.sleep(n.get_len().toLong())
+			} else {
+				val note = (notes[(0..notes.count() - 1).random()])
+				val st = note.get_base()
+				println("  :: note: ${note.name()}, st: $st, hz: ${semitone_to_hz(st)}, len: ${note.get_len()}")
+				generate_tone(semitone_to_hz(st), note.get_len(), 500)
+			}
 		}
 	}
 }
