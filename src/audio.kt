@@ -3,7 +3,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.LineUnavailableException;
 
-fun generate_tone(hz: Double, msecs: Double, volume: Int) {
+fun generate_tone(hz: Double, msecs: Int, volume: Int) {
 	val frequency: Float = 44100.toFloat();
 	var buf: ByteArray = ByteArray(2)
 	var af: AudioFormat = AudioFormat(frequency, 8, 1, true, false);

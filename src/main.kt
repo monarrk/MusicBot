@@ -28,8 +28,8 @@ fun main() {
 		for (n in notes) {
 			val note = (notes[(0..notes.count() - 1).random()])
 			val st = note.get_base()
-			println("  :: name: ${note.name()}, st: $st, hz: ${semitone_to_hz(st)}")
-			generate_tone(semitone_to_hz(st), c.get_len() / 4.0, 500)
+			println("  :: note: ${note.name()}, st: $st, hz: ${semitone_to_hz(st)}, len: ${note.get_len()}")
+			generate_tone(semitone_to_hz(st), note.get_len(), 500)
 		}
 	}
 }

@@ -1,5 +1,5 @@
 public class Chord(max: Int = 6, min: Int = 3) {
-	/// Base number starting at A0 and going up one half step (1, would be A#0, 7 Eb0, etc)
+	/// Base number starting at a note and going up one half step
 	val base: Int
 
 	/// Chord modifiers
@@ -9,7 +9,7 @@ public class Chord(max: Int = 6, min: Int = 3) {
 	val notes: MutableList<Note>
 
 	/// Length the chord is played
-	val len: Int
+	val len: Int 
 
 	/// Optionally add a mod to chord
 	fun add_mod(mod: Mods) {
@@ -70,7 +70,6 @@ public class Chord(max: Int = 6, min: Int = 3) {
 		// Give ourselves a range of octaves
 		base = (min..(max * 12)).random()
 		mods = mutableSetOf()
-		len = (100..1000).random()
 
 		// Generate mods
 		add_mod(Mods.MINOR)
@@ -78,6 +77,13 @@ public class Chord(max: Int = 6, min: Int = 3) {
 		add_mod(Mods.MAJSEVEN)
 
 		notes = notegen()
+
+		// Calculate total length of the chord
+		var l = 0
+		notes.forEach {
+			l = l + it.get_len()
+		}
+		len = l
 	}
 }
 
